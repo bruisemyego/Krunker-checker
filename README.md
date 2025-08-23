@@ -1,4 +1,4 @@
-# Krunker Account Checker V2
+# Krunker Account Checker V2, Get it to 10 stars for profile fetching and more
 
 Account checker for Krunker.io with proxy support and captcha solving. 
 
@@ -61,5 +61,6 @@ Coded by @cleanest
 
 ---
 ⭐ Star if useful!
+
 
 
