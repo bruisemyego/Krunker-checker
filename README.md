@@ -3,7 +3,7 @@
 
 Account checker for Krunker.io with proxy support and captcha solving. 
 
-## Features
+## V2 Features
 - Multi-threaded account checking (default 500 threads)
 - Proxy support (HTTP/HTTPS/SOCKS5) with auto rotation
 - Automatic captcha solving (SHA-256)
@@ -61,6 +61,7 @@ Coded by @cleanest
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
 
 
