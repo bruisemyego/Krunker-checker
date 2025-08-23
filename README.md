@@ -1,6 +1,6 @@
 # Krunker Account Checker
 
-Account checker for Krunker.io with proxy support and captcha solving capabilities.
+Account checker for Krunker.io with proxy support and captcha solving capabilities
 
 ## Features
 - Multi-threaded account checking
@@ -47,3 +47,4 @@ Coded by @cleanest
 ---
 ⭐ Don't forget to star the repo if you find it useful!
 ⭐ Don't forget to star the repo if you find it useful!
+
