@@ -1,51 +1,63 @@
-# Krunker Account Checker
+# Krunker Account Checker V2
 
-Account checker for Krunker.io with proxy support and captcha solving capabilities.
+Account checker for Krunker.io with proxy support and captcha solving. 
 
 ## Features
-- Multi-threaded account checking
-- Proxy support (HTTP/HTTPS/SOCKS5)
-- Automatic captcha solving
-- User agent rotation
+- Multi-threaded account checking (default 500 threads)
+- Proxy support (HTTP/HTTPS/SOCKS5) with auto rotation
+- Automatic captcha solving (SHA-256)
+- User agent rotation (Chrome, Firefox, Edge)
+- Real-time stats and CPM counter
 - Detailed results categorization
+- Bad proxy cleanup
 
-## Installation
+## Setup
 
-1. Install Go (1.21 or later)
-2. Clone the repository
-3. Install dependencies:
-```bash
-go mod tidy
-```
+1. Install Go (1.21+)
+2. Clone this repo
+3. Run `go mod tidy`
 
 ## Usage
 
-1. Place your accounts in `data/accounts.txt` (format: username:password)
-2. Add proxies in `data/proxies.txt` (required)
-   - Format: ip:port or protocol://ip:port
-   - Supported protocols: http://, https://, socks5://
-   - If no protocol is specified, http:// will be used
-3. Run the checker:
-```bash
-go run main.go
+1. Put accounts in `data/accounts.txt` (username:password or email:password)
+2. Add proxies to `data/proxies.txt` 
+   - Format: `ip:port` or `protocol://ip:port`
+   - Supports http://, https://, socks5://
+3. Run: `go run main.go`
+4. Choose thread count (or press enter for 500)
+
+## Results
+
+Results are saved in the `results/` folder:
+- `login_ok.txt` - Working accounts
+- `needs_migrate.txt` - Need email migration
+- `needs_verification.txt` - Need email verification
+- `Banned.txt` - Account Banned
+- `bad_accounts.txt` - Bad credentials
+- `undetermined.txt` - Couldn't check because of bad proxies
+
+## File Structure
+```
+krunker-cli/
+├── main.go
+├── services/
+│   ├── login.go
+│   └── captcha.go
+├── data/
+│   ├── accounts.txt
+│   └── proxies.txt
+└── results/
+    └── (result files)
 ```
 
-The results will be saved in the `results` folder:
-- `login_ok.txt`: Working accounts
-- `needs_migrate.txt`: Accounts that need migration
+## Contact
 
-## Contact & Support
-
-- Discord Server: [Join Here](https://discord.gg/QgqKpKVG5t)
-- Developer: [@cleanest](https://discord.com/users/cleanest)
-- For help and support, contact @cleanest on Discord
+- Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
+- Dev: @cleanest
 
 ## Credits
 
-Coded by @cleanest
+Made by @cleanest
 
 ---
-⭐ Don't forget to star the repo if you find it useful!
-⭐ Don't forget to star the repo if you find it useful!
-
-
+⭐ Star if useful!
