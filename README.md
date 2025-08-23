@@ -53,7 +53,7 @@ krunker-cli/
 ## Contact
 
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
-- Dev: @cleanest
+- Dev: @cleanest on discord
 
 ## Credits
 
@@ -61,3 +61,4 @@ Made by @cleanest
 
 ---
 ⭐ Star if useful!
+
