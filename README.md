@@ -61,7 +61,9 @@ krunker-cli/
 Coded by @cleanest
 
 ---
-⭐ Star if useful!
+⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
+
 
 
 
