@@ -39,7 +39,6 @@ Results are saved in the `results/` folder:
 
 ## File Structure
 ```
-krunker-cli/
 ├── main.go
 ├── services/
 │   ├── login.go
@@ -62,6 +61,7 @@ Coded by @cleanest
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
 
 
