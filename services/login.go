@@ -1,5 +1,3 @@
-// services/login.go
-
 package services
 
 import (
@@ -588,3 +586,4 @@ func readp(filename string) ([]string, error) {
 	}
 	return proxies, scanner.Err()
 }
+
