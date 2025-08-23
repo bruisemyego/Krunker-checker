@@ -57,8 +57,9 @@ krunker-cli/
 
 ## Credits
 
-Made by @cleanest
+Coded by @cleanest
 
 ---
 ⭐ Star if useful!
+
 
