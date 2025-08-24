@@ -1,7 +1,9 @@
 # Krunker Account Checker V2
 # ⭐ Please star for V3 with even better improvements ⭐
 
-Account checker for Krunker.io with proxy support and captcha solving. 
+Account checker for Krunker.io with proxy support and captcha solving.  
+
+⚠️ **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use high-quality proxies for best results.  
 
 ## V2 Features
 - Multi-threaded account checking (default 500 threads)
@@ -38,17 +40,16 @@ Results are saved in the `results/` folder:
 - `undetermined.txt` - Couldn't check because of bad proxies
 
 ## File Structure
-```
 ├── main.go
 ├── services/
-│   ├── login.go
-│   └── captcha.go
+│ ├── login.go
+│ └── captcha.go
 ├── data/
-│   ├── accounts.txt
-│   └── proxies.txt
+│ ├── accounts.txt
+│ └── proxies.txt
 └── results/
-    └── (result files)
-```
+└── (result files)
+
 
 ## Contact
 
@@ -61,15 +62,3 @@ Coded by @cleanest
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
-
-
-
-
-
-
-
-
-
-
-
-
