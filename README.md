@@ -1,9 +1,6 @@
 # Krunker Account Checker V2
 # ⭐ Please star for V3 with even better improvements ⭐
 
-
-
-
 ⚠️ **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
 
 ## V2 Features
@@ -54,17 +51,14 @@ Results are saved in the `results/` folder:
 └── (result files)
 
 ```
-## Contact
+## Credits/Contact
 
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
 - Dev: @cleanest on discord
 
-## Credits
-
-Coded by @cleanest
-
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
 
 
