@@ -1,7 +1,7 @@
 # Krunker Account Checker V2
 # ⭐ Please star for V3 with even better improvements ⭐
 
-⚠️ **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
+**Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
 
 ## V2 Features
 - Multi-threaded account checking (default 500 threads)
@@ -58,6 +58,7 @@ Results are saved in the `results/` folder:
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
 
 
