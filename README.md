@@ -3,7 +3,7 @@
 
 Account checker for Krunker.io with proxy support and captcha solving.  
 
-⚠️ **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use high-quality proxies for best results.  
+⚠️ **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
 
 ## V2 Features
 - Multi-threaded account checking (default 500 threads)
@@ -62,3 +62,4 @@ Coded by @cleanest
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
