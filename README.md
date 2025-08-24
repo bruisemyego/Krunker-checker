@@ -56,16 +56,3 @@ Results are saved in the `results/` folder:
 
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
 - Dev: @cleanest on discord
-
----
-⭐ Get this to 10 stars for V3 with even better improvements ⭐
-
-
-
-
-
-
-
-
-
-
