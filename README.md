@@ -1,5 +1,5 @@
-# ⭐ Please star the repo if you’d like to see V3 with even better improvements (stats fetching: level, inventory value, and more) ⭐
-# Krunker Account Checker V2
+# ⭐ Please star the repo if you’d like to see V3 with even better improvements (stats fetching: level, inventory value, and more)
+## Krunker Account Checker V2
 
 
 **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
@@ -59,6 +59,7 @@ Results are saved in the `results/` folder:
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
 
 
