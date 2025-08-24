@@ -42,14 +42,13 @@ Results are saved in the `results/` folder:
 ## File Structure
 ├── main.go
 ├── services/
-│ ├── login.go
-│ └── captcha.go
+│   ├── login.go
+│   └── captcha.go
 ├── data/
-│ ├── accounts.txt
-│ └── proxies.txt
+│   ├── accounts.txt
+│   └── proxies.txt
 └── results/
-└── (result files)
-
+    └── (result files)
 
 ## Contact
 
@@ -62,4 +61,5 @@ Coded by @cleanest
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
