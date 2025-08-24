@@ -40,6 +40,8 @@ Results are saved in the `results/` folder:
 - `undetermined.txt` - Couldn't check because of bad proxies
 
 ## File Structure
+```
+
 ├── main.go
 ├── services/
 │   ├── login.go
@@ -48,8 +50,9 @@ Results are saved in the `results/` folder:
 │   ├── accounts.txt
 │   └── proxies.txt
 └── results/
-    └── (result files)
+└── (result files)
 
+```
 ## Contact
 
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
@@ -61,5 +64,6 @@ Coded by @cleanest
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
 
