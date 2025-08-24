@@ -1,6 +1,9 @@
 # Krunker Account Checker V2
 # ⭐ Please star for V3 with even better improvements ⭐
 
+
+
+
 ⚠️ **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
 
 ## V2 Features
@@ -62,6 +65,7 @@ Coded by @cleanest
 
 ---
 ⭐ Get this to 10 stars for V3 with even better improvements ⭐
+
 
 
 
