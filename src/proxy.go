@@ -220,7 +220,9 @@ func normalize(proxy string) string {
 	}
 
 	if strings.Contains(proxy, "@") {
-		return "http://" + proxy
+		if _, err := url.Parse("http://" + proxy); err == nil {
+			return "http://" + proxy
+		}
 	}
 
 	return "http://" + proxy
