@@ -1,8 +1,14 @@
 # ⭐ Please star the repo if you’d like to see V3 with even better improvements (stats fetching: level, inventory value, and more)
+
 ## Krunker Account Checker V2
 
 
 **Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
+
+## Credits/Contact
+
+- Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
+- Dev: @cleanest on discord
 
 ## V2 Features
 - Multi-threaded account checking (default 500 threads)
@@ -52,7 +58,3 @@ Results are saved in the `results/` folder:
 └── (result files)
 
 ```
-## Credits/Contact
-
-- Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
-- Dev: @cleanest on discord
