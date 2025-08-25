@@ -27,7 +27,7 @@
 
 ## Usage
 
-1. Put accounts in `data/accounts.txt` (username:password or email:password)
+1. Put accounts in `data/accounts.txt` (user:pass or email:pass)
 2. Add proxies to `data/proxies.txt` 
    - Format: `ip:port` or `protocol://ip:port`
    - Supports http://, https://, socks5://
@@ -58,3 +58,4 @@ Results are saved in the `results/` folder:
 └── (result files)
 
 ```
+
