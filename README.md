@@ -1,63 +1,69 @@
-# ⭐ V3 will be released once the repo hits 5 stars, V3 will have better improvements (stats fetching: level, inventory value, and more)
+# Krunker Account Checker V3
 
-## Krunker Account Checker V2
-
-
-**Notice:** If the checker feels slow, it’s most likely because your proxies are trash. Use good proxies for best results.  
+**Notice:** If the checker feels slow, it's most likely because your proxies are trash. Use good proxies for best results.
 
 ## Credits/Contact
-
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
 - Dev: @cleanest on discord
 
-## V2 Features
+## V3 Features
+- Complete account stats fetching (Level, Inventory Value, KR)
+- Smart proxy management with auto rotation and cleanup
 - Multi-threaded account checking (default 500 threads)
-- Proxy support (HTTP/HTTPS/SOCKS5) with auto rotation
+- Handles both username and email login endpoints
 - Automatic captcha solving (SHA-256)
-- User agent rotation (Chrome, Firefox, Edge)
 - Real-time stats and CPM counter
-- Detailed results categorization
-- Bad proxy cleanup
+- User agent rotation (Chrome, Firefox, Edge)
+- Built-in proxy scraper
 
 ## Setup
-
 1. Install Go (1.21+)
 2. Clone this repo
 3. Run `go mod tidy`
 
-## Usage
-
-1. Put accounts in `data/accounts.txt` (user:pass or email:pass)
-2. Add proxies to `data/proxies.txt` 
-   - Format: `ip:port` or `protocol://ip:port`
-   - Supports http://, https://, socks5://
-3. Run: `go run main.go`
-4. Choose thread count (or press enter for 500)
-
-## Results
-
-Results are saved in the `results/` folder:
-- `login_ok.txt` - Working accounts
-- `needs_migrate.txt` - Need email migration
-- `needs_verification.txt` - Need email verification
-- `Banned.txt` - Account Banned
-- `bad_accounts.txt` - Bad credentials
-- `undetermined.txt` - Couldn't check because of bad proxies
-
 ## File Structure
 ```
-
 ├── main.go
-├── services/
+├── src/
 │   ├── login.go
-│   └── captcha.go
+│   ├── profile.go
+│   ├── proxy.go
+│   ├── scraper.go
+│   ├── captcha.go
+│   └── utils.go
 ├── data/
 │   ├── accounts.txt
 │   └── proxies.txt
 └── results/
-└── (result files)
-
+    └── (result files)
 ```
 
+## Usage
+1. Put accounts in `data/accounts.txt` (user:pass or email:pass format)
+2. Run: `go run main.go`
+3. Choose whether to scrape proxies automatically (y/N)
+4. Set thread count (or press enter for default 500)
 
+**Note:** The checker will automatically scrape proxies if none are found, or you can add your own to `data/proxies.txt`
 
+## Proxy Format
+The checker supports multiple proxy formats:
+- `ip:port` (will auto-add http://)
+- `http://ip:port`
+- `https://ip:port` 
+- `socks5://ip:port`
+- `username:password@ip:port`
+
+## Results
+- `login_ok.txt` - Working accounts
+- `needs_migrate.txt` - Need email migration
+- `needs_verification.txt` - Need email verification
+- `bad_accounts.txt` - Invalid credentials  
+- `undetermined.txt` - Couldn't check due to proxy issues
+
+## Performance Tips
+- Use quality proxies for best speed and accuracy
+- Higher thread counts work better with more proxies
+- The checker automatically cleans up bad proxies for you
+
+⭐ Please star the repo if you found this useful!
