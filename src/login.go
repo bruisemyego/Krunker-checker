@@ -183,6 +183,9 @@ func processAccounts(_ int, accountChan <-chan Account, counters *LiveCounters) 
 
 			if err != nil {
 				handleProxyError(err, proxy, proxyManager)
+				if proxyManager.GetActiveProxyCount() == 0 {
+					break
+				}
 				continue
 			}
 
