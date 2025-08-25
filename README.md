@@ -66,4 +66,5 @@ The checker supports multiple proxy formats:
 - Higher thread counts work better with more proxies
 - The checker automatically cleans up bad proxies for you
 
-⭐ Please star the repo if you found this useful!
+# ⭐ Please star the repo if you found this useful!
+
