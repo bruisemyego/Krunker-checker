@@ -1,6 +1,6 @@
-// services/captcha.go
+// src/captcha.go
 
-package services
+package src
 
 import (
 	"crypto/sha256"
@@ -27,13 +27,20 @@ func SolveCaptcha(conn *websocket.Conn, captchaMessage []interface{}) error {
 	salt := toString(captchaData, "salt")
 	signature := toString(captchaData, "signature")
 	maxNumber := toIntFromAny(captchaData["maxnumber"])
-	fmt.Printf("Solving captcha: algorithm=%s, challenge=%s, maxnumber=%d\n", algorithm, challenge, maxNumber)
+
 	if maxNumber <= 0 {
-		return fmt.Errorf("invalid maxnumber: %d", maxNumber)
+		if maxStr := toString(captchaData, "maxnumber"); maxStr != "" {
+			if parsed, err := strconv.Atoi(maxStr); err == nil && parsed > 0 {
+				maxNumber = parsed
+			}
+		}
+
 	}
+
 	startTime := time.Now()
 	solution := solveChallengeSync(algorithm, challenge, salt, maxNumber)
 	elapsed := int(time.Since(startTime).Milliseconds())
+
 	solutionData := map[string]interface{}{
 		"algorithm": algorithm,
 		"challenge": challenge,
@@ -42,21 +49,25 @@ func SolveCaptcha(conn *websocket.Conn, captchaMessage []interface{}) error {
 		"signature": signature,
 		"took":      elapsed,
 	}
+
 	solutionJSON, err := json.Marshal(solutionData)
 	if err != nil {
 		return fmt.Errorf("failed to marshal solution: %w", err)
 	}
+
 	solutionB64 := base64.StdEncoding.EncodeToString(solutionJSON)
 	response := []interface{}{"cptR", solutionB64}
+
 	packedResponse, err := msgpack.Marshal(response)
 	if err != nil {
 		return fmt.Errorf("failed to encode captcha response: %w", err)
 	}
+
 	err = conn.WriteMessage(websocket.BinaryMessage, append(packedResponse, 0x00, 0x00))
 	if err != nil {
 		return fmt.Errorf("failed to send captcha response: %w", err)
 	}
-	fmt.Printf("Solved captcha: %d (took %dms)\n", solution, elapsed)
+
 	time.Sleep(1 * time.Second)
 
 	return nil
@@ -79,32 +90,4 @@ func solveChallengeSync(algorithm, challenge, salt string, maxNumber int) int {
 	}
 
 	return 0
-}
-
-func toString(data map[string]interface{}, key string) string {
-	if val, ok := data[key]; ok {
-		if str, ok := val.(string); ok {
-			return str
-		}
-	}
-	return ""
-}
-
-func toIntFromAny(value interface{}) int {
-	switch v := value.(type) {
-	case float64:
-		return int(v)
-	case int:
-		return v
-	case int32:
-		return int(v)
-	case int64:
-		return int(v)
-	case string:
-		if i, err := strconv.Atoi(v); err == nil {
-			return i
-		}
-	}
-	return 0
-
 }
