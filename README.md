@@ -1,4 +1,4 @@
-# ⭐ Please star the repo if you’d like to see V3 with even better improvements (stats fetching: level, inventory value, and more)
+# ⭐ V3 will be released once the repo hits 5 stars, V3 with have better improvements (stats fetching: level, inventory value, and more)
 
 ## Krunker Account Checker V2
 
@@ -58,4 +58,5 @@ Results are saved in the `results/` folder:
 └── (result files)
 
 ```
+
 
