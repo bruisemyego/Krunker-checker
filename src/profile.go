@@ -35,7 +35,11 @@ func FetchPlayerStats(username string, proxyURL string) (*PlayerStats, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to create websocket connection: %w", err)
 	}
-	defer conn.Close()
+	defer func() {
+		if conn != nil {
+			conn.Close()
+		}
+	}()
 
 	conn.SetReadDeadline(time.Now().Add(20 * time.Second))
 	conn.SetWriteDeadline(time.Now().Add(10 * time.Second))
@@ -58,7 +62,11 @@ func GetUsernameFromWebSocket(account Account, proxyURL string) (string, error) 
 	if err != nil {
 		return "", fmt.Errorf("failed to create websocket connection: %w", err)
 	}
-	defer conn.Close()
+	defer func() {
+		if conn != nil {
+			conn.Close()
+		}
+	}()
 
 	conn.SetReadDeadline(time.Now().Add(20 * time.Second))
 	conn.SetWriteDeadline(time.Now().Add(10 * time.Second))
