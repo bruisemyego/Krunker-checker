@@ -2,8 +2,9 @@
 
 **Notice:** If the checker feels slow, it's most likely because your proxies are trash. Use good proxies for best results.
 
-Private API access $20/month. DM @cleanest on Discord for more info
-https://www.youtube.com/watch?v=favX310xSS4
+# Private API access $20/month. DM @cleanest on Discord for more info
+
+## https://www.youtube.com/watch?v=favX310xSS4
 
 ## Credits/Contact
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
@@ -70,5 +71,6 @@ The checker supports multiple proxy formats:
 - The checker automatically cleans up bad proxies for you
 
 # ⭐ Please star the repo if you found this useful!
+
 
 
