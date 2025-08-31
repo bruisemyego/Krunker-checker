@@ -2,6 +2,8 @@
 
 **Notice:** If the checker feels slow, it's most likely because your proxies are trash. Use good proxies for best results.
 
+https://www.youtube.com/watch?v=favX310xSS4
+
 ## Credits/Contact
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
 - Dev: @cleanest on discord
@@ -67,6 +69,7 @@ The checker supports multiple proxy formats:
 - The checker automatically cleans up bad proxies for you
 
 # ⭐ Please star the repo if you found this useful!
+
 
 
 
