@@ -17,14 +17,21 @@ import (
 
 type ProxyManager struct {
 	activeProxies     []string
-	shelvedProxies    map[string]bool
+	shelvedProxies    map[string]time.Time
 	removedProxies    map[string]bool
 	currentIndex      int
 	mu                sync.Mutex
+	initialProxies    []string
 	initialProxyCount int
+	lastRestore       time.Time
 }
 
 var proxyManager *ProxyManager
+
+const (
+	shelveTimeout   = 2 * time.Minute
+	restoreInterval = 30 * time.Second
+)
 
 func InitializeProxyManager() error {
 	proxies, err := readem("data/proxies.txt")
@@ -36,18 +43,33 @@ func InitializeProxyManager() error {
 	}
 
 	proxyManager = &ProxyManager{
-		activeProxies:     proxies,
-		shelvedProxies:    make(map[string]bool),
+		activeProxies:     make([]string, len(proxies)),
+		shelvedProxies:    make(map[string]time.Time),
 		removedProxies:    make(map[string]bool),
 		currentIndex:      -1,
+		initialProxies:    make([]string, len(proxies)),
 		initialProxyCount: len(proxies),
+		lastRestore:       time.Now(),
 	}
+
+	copy(proxyManager.activeProxies, proxies)
+	copy(proxyManager.initialProxies, proxies)
+
 	return nil
 }
 
 func (pm *ProxyManager) GetNextProxy() string {
 	pm.mu.Lock()
 	defer pm.mu.Unlock()
+
+	if time.Since(pm.lastRestore) > restoreInterval {
+		pm.restoreShelvedProxiesInternal()
+		pm.lastRestore = time.Now()
+	}
+
+	if len(pm.activeProxies) == 0 {
+		pm.restoreAllProxiesInternal()
+	}
 
 	if len(pm.activeProxies) == 0 {
 		return ""
@@ -81,7 +103,11 @@ func (pm *ProxyManager) ShelveProxy(proxyToShelve string) {
 	pm.mu.Lock()
 	defer pm.mu.Unlock()
 
-	if pm.shelvedProxies[proxyToShelve] {
+	if pm.removedProxies[proxyToShelve] {
+		return
+	}
+
+	if _, exists := pm.shelvedProxies[proxyToShelve]; exists {
 		return
 	}
 
@@ -93,8 +119,48 @@ func (pm *ProxyManager) ShelveProxy(proxyToShelve string) {
 	}
 
 	pm.activeProxies = newActiveProxies
-	pm.shelvedProxies[proxyToShelve] = true
+	pm.shelvedProxies[proxyToShelve] = time.Now()
 	pm.currentIndex = -1
+}
+
+func (pm *ProxyManager) restoreShelvedProxiesInternal() {
+	now := time.Now()
+	var restoredCount int
+
+	for proxy, shelveTime := range pm.shelvedProxies {
+		if now.Sub(shelveTime) > shelveTimeout {
+			pm.activeProxies = append(pm.activeProxies, proxy)
+			delete(pm.shelvedProxies, proxy)
+			restoredCount++
+		}
+	}
+
+	if restoredCount > 0 {
+		pm.currentIndex = -1
+	}
+}
+
+func (pm *ProxyManager) restoreAllProxiesInternal() {
+	var restoredCount int
+
+	for proxy := range pm.shelvedProxies {
+		pm.activeProxies = append(pm.activeProxies, proxy)
+		delete(pm.shelvedProxies, proxy)
+		restoredCount++
+	}
+
+	if len(pm.activeProxies) == 0 {
+		for _, proxy := range pm.initialProxies {
+			if !pm.removedProxies[proxy] {
+				pm.activeProxies = append(pm.activeProxies, proxy)
+				restoredCount++
+			}
+		}
+	}
+
+	if restoredCount > 0 {
+		pm.currentIndex = -1
+	}
 }
 
 func (pm *ProxyManager) GetProxyStats() (active int, bad int) {
@@ -102,7 +168,9 @@ func (pm *ProxyManager) GetProxyStats() (active int, bad int) {
 	defer pm.mu.Unlock()
 
 	active = len(pm.activeProxies)
-	bad = len(pm.removedProxies) + len(pm.shelvedProxies)
+	shelved := len(pm.shelvedProxies)
+	removed := len(pm.removedProxies)
+	bad = shelved + removed
 	return
 }
 
@@ -111,9 +179,11 @@ func (pm *ProxyManager) SaveGoodProxies() error {
 	defer pm.mu.Unlock()
 
 	goodProxies := make(map[string]bool)
+
 	for _, p := range pm.activeProxies {
 		goodProxies[p] = true
 	}
+
 	for p := range pm.shelvedProxies {
 		goodProxies[p] = true
 	}
@@ -243,13 +313,7 @@ func (pm *ProxyManager) GetTotalProxyCount() int {
 func (pm *ProxyManager) RestoreShelvedProxies() {
 	pm.mu.Lock()
 	defer pm.mu.Unlock()
-
-	for proxy := range pm.shelvedProxies {
-		pm.activeProxies = append(pm.activeProxies, proxy)
-	}
-
-	pm.shelvedProxies = make(map[string]bool)
-	pm.currentIndex = -1
+	pm.restoreShelvedProxiesInternal()
 }
 
 func proxym() *ProxyManager {
