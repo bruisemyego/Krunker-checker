@@ -1,4 +1,4 @@
-# Krunker Account Checker V3
+# Krunker Account Checker
 
 **Notice:** If the checker feels slow, it's most likely because your proxies are trash. Use good proxies for best results.
 
@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=favX310xSS4
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
 - Dev: @cleanest on discord
 
-## V3 Features
+## Features
 - Complete account stats fetching (Level, Inventory Value, KR)
 - Smart proxy management with auto rotation and cleanup
 - Multi-threaded account checking (default 500 threads)
@@ -69,6 +69,7 @@ The checker supports multiple proxy formats:
 - The checker automatically cleans up bad proxies for you
 
 # ⭐ Please star the repo if you found this useful!
+
 
 
 
