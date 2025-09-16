@@ -4,6 +4,10 @@
 
 https://www.youtube.com/watch?v=favX310xSS4
 
+## DM me on Discord @cleanest for more info or to purchase.
+**Krunker Botter — \$50 (source included)**: Spawn bots that join your game so you can flood matches or farm nukes/KR.
+**Krunker Siphone (KR Farm) — \$70 (source included)**: login to accounts → join a game → deposit KR into the map. Includes a verifier api that auto-verifies FRVR verification
+
 ## Credits/Contact
 - Discord: [Join Server](https://discord.gg/QgqKpKVG5t)
 - Dev: @cleanest on discord
@@ -69,6 +73,7 @@ The checker supports multiple proxy formats:
 - The checker automatically cleans up bad proxies for you
 
 # ⭐ Please star the repo if you found this useful!
+
 
 
 
