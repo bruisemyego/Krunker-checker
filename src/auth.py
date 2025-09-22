@@ -41,7 +41,7 @@ class Auth:
    time.sleep(random.uniform(.3,.8))
    d={"email":u,"password":p}if s.e(u)else{"username":u,"password":p}
    url=email if s.e(u)else username
-   h={"Content-Type":"application/json","User-Agent":s.ua(),"Origin":origin,"Referer":"https://krunker.io/","Accept":"application/json, text/plain, */*","Accept-Language":"en-US,en;q=0.9","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-site"}
+   h={"Content-Type":"application/json","User-Agent":s.ua(),"Origin":origin,"Referer":"https://krunker.io/","Accept":"application/json, text/plain, */*","Accept-Language":"en-US,en;q=0.9","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-site"} # I see u skidding atleast credit @cleanest
    pr=k.gp();pd={"http":pr,"https":pr}if pr else None
    r=requests.post(url,json=d,headers=h,timeout=15,proxies=pd)
    t=r.text
@@ -49,4 +49,5 @@ class Auth:
    if r.status_code!=200:return f"{t[:100]}"
    st=s.p(t);return st if st!="unknown"else f"unknown - {t[:100]}"
   except requests.exceptions.Timeout:return"timeout"
+
   except Exception as e:return f"error - {str(e)}"
