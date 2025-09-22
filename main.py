@@ -6,4 +6,4 @@ from krunker import main
 
 if __name__=="__main__":main()
 
-#credit @cleanest
+# For support or inquiries, contact @cleanest on Discord
