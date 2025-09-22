@@ -44,7 +44,11 @@ class K:
     L = f"{u}:{p} | Profile error: {str(e)}"
     print(f"Profile error for {u}: {str(e)}")
    
-   with results_lock:results_list.append(L);os.makedirs("results",exist_ok=True);open("results/hits.txt","w").write("\n".join(results_list)+"\n")
+   with results_lock:
+    results_list.append(L)
+    os.makedirs("results",exist_ok=True)
+    with open("results/hits.txt", "a", encoding="utf-8") as f:
+     f.write(L + "\n")
   else:print(f"invalid | {u} | {st}")
 
 def main():
