@@ -2,7 +2,7 @@
 import os,sys
 sys.path.append(os.path.join(os.path.dirname(__file__),'src'))
 
-from krunker import main
+from src.krunker import main
 
 if __name__=="__main__":main()
 
