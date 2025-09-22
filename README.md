@@ -6,7 +6,7 @@
 - **Proxy support** with authentication (HTTP/HTTPS)
 - **Automatic CAPTCHA solving**
 - **Detailed statistics**:
-  - Player level and experience
+  - Player level
   - KR (in-game currency) balance
   - Total inventory value
 
