@@ -1,6 +1,6 @@
 # Krunker Account Checker
 
-## Features
+## Features 
 
 - **Multi-threaded** processing for rapid account checking
 - **Proxy support** with authentication (HTTP/HTTPS)
