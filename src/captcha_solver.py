@@ -20,7 +20,6 @@ class CaptchaSolver:
   max_number = captcha_data.get('maxnumber', 300000)
   signature = captcha_data.get('signature')
   
-  print(f"Solving CAPTCHA for {username}...")
   solution = s.captcha(challenge, salt, algorithm, max_number)
   
   if solution is not None:
@@ -35,9 +34,7 @@ class CaptchaSolver:
    captcha_req = ["cptR", b64_response]
    packed_captcha = msgpack.packb(captcha_req)
    ws.send(packed_captcha + b'\x00\x00', opcode=websocket.ABNF.OPCODE_BINARY)
-   print(f"CAPTCHA solved for {username}")
    time.sleep(2)
    return True
   else:
-   print(f"Failed to solve CAPTCHA for {username}")
    return False
