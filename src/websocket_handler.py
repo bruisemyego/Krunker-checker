@@ -102,5 +102,4 @@ class WSHandler:
    ws.close()
    return None
   except Exception as e:
-   print(f"WebSocket error for {username}: {str(e)}")
    return None
