@@ -1,4 +1,4 @@
-# Krunker Account Checker
+# Krunker Account Checker ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=bQxQ.Krunker-checker)
 
 ## Features 
 
