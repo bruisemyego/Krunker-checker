@@ -30,18 +30,3 @@
 ## 📞 Contact
 
 For support or inquiries, contact `@cleanest` on Discord
-
-## Additional Services
-
-Interested in more Krunker tools? Check out these:
-
-- **Krunker Botter** ($50) - Spawn bots to join your games
-  - Farm nukes and KR efficiently
-  - Complete source code included
-
-- **Krunker Siphone** ($70) - KR farming
-  - Automated KR deposit ingame map
-  - Includes Auto Migrator
-  - Complete source code included
-
-DM `@cleanest` on Discord for purchase information or questions about these tools.
