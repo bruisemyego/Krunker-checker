@@ -30,3 +30,5 @@
 ## 📞 Contact
 
 For support or inquiries, contact `@cleanest` on Discord
+Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
+
