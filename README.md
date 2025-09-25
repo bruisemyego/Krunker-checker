@@ -26,6 +26,9 @@
    python main.py
    ```
    - When prompted, enter the number of threads to use (default: 100)
+  
+<img width="934" height="745" alt="image" src="https://github.com/user-attachments/assets/c08ef93a-d831-4a82-b2c1-07d9bc342ab4" />
+
 
 ## 📞 Contact
 
