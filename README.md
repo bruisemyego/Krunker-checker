@@ -1,8 +1,8 @@
 # Krunker Account Checker ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=bQxQ.Krunker-checker)
 
-## 📞 Contact
+## Contact
 
-For support or inquiries, contact `@cleanest` on Discord
+For support or inquiries, contact `@cleanest` on Discord  
 Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
 
 ## Features 
