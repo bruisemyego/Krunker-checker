@@ -1,5 +1,10 @@
 # Krunker Account Checker ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=bQxQ.Krunker-checker)
 
+## 📞 Contact
+
+For support or inquiries, contact `@cleanest` on Discord
+Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
+
 ## Features 
 
 - **Multi-threaded** processing for rapid account checking
@@ -28,9 +33,4 @@
   
 <img width="934" height="745" alt="image" src="https://github.com/user-attachments/assets/c08ef93a-d831-4a82-b2c1-07d9bc342ab4" />
 
-
-## 📞 Contact
-
-For support or inquiries, contact `@cleanest` on Discord
-Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
 
