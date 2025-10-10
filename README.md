@@ -31,6 +31,6 @@ Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
    python main.py
    ```
   
-<img width="934" height="745" alt="image" src="https://github.com/user-attachments/assets/c08ef93a-d831-4a82-b2c1-07d9bc342ab4" />
+<img width="934" height="745" alt="image" src="https://github.com/user-attachments/assets/c08ef93a-d831-4a82-b2c1-07d9bc342ab4" /> 
 
 
