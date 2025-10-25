@@ -12,7 +12,7 @@ Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
 - **Automatic CAPTCHA solving**
 - **Detailed statistics**:
   - Player level
-  - KR (in-game currency) balance
+  - KR (in-game currency) balance 
   - Total inventory value
 
 ## Setup
