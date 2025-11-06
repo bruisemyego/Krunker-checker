@@ -8,7 +8,7 @@ Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
 ## Features 
 
 - **Multi-threaded** processing for rapid account checking
-- **Proxy support** with authentication (HTTP/HTTPS)
+- **Proxy support** with authentication (HTTP/HTTPS) 
 - **Automatic CAPTCHA solving**
 - **Detailed statistics**:
   - Player level
