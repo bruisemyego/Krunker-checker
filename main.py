@@ -5,4 +5,4 @@ from src.krunker import main
 
 if __name__=="__main__":main()
 
-# For support or inquiries, contact @cleanest on Discord
+# For support or inquiries, contact @kupk on Discord
