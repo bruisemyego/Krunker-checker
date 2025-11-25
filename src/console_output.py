@@ -38,7 +38,7 @@ class C2:
   print(f"{Fore.WHITE}Progress: {Fore.YELLOW}{s.tca}{Fore.WHITE}/{Fore.YELLOW}{s.ta}{Fore.WHITE} ({Fore.YELLOW}{pp}{Fore.WHITE}%)")
   print(f"{Fore.WHITE}Accounts remaining: {Fore.YELLOW}{al}")
   print(f"{Fore.GREEN}Total KR found: {Fore.YELLOW}{s.tkr:,}")
-  print(f"{Fore.GREEN}Accounts saved: {Fore.YELLOW}{s.tfa}")
+  print(f"{Fore.GREEN}Hits: {Fore.YELLOW}{s.tfa}")
   print()
   print(f"{Fore.CYAN}Inventory:")
   print(f"{Fore.CYAN}  {Fore.YELLOW}1K+{Fore.CYAN}   inv: {Fore.YELLOW}{s.ic['1k+']}")
