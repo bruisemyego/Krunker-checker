@@ -14,7 +14,7 @@ Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
   - Player level
   - KR (in-game currency) balance 
   - Total inventory value
-
+ 
 ## Setup
 
 1. **Install dependencies**:
