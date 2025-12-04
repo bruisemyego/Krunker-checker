@@ -10,7 +10,7 @@ Join the community server: [Discord Server](https://discord.gg/QgqKpKVG5t)
 - **Multi-threaded** processing for rapid account checking
 - **Proxy support** with authentication (HTTP/HTTPS) 
 - **CAPTCHA solving** 
-- **Detailed statistics**:
+- **Detailed statistics**: 
   - Player level
   - KR (in-game currency) balance 
   - Total inventory value
